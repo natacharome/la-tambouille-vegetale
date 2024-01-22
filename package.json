@@ -1,0 +1,65 @@
+{
+  "name": "angular-starter",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^17.0.5",
+    "@angular/common": "^17.0.5",
+    "@angular/compiler": "^17.0.5",
+    "@angular/core": "^17.0.5",
+    "@angular/forms": "^17.0.5",
+    "@angular/platform-browser": "^17.0.5",
+    "@angular/platform-browser-dynamic": "^17.0.5",
+    "@angular/router": "^17.0.5",
+    "autoprefixer": "^10.4.15",
+    "jest-preset-angular": "^13.1.4",
+    "postcss": "^8.4.28",
+    "rxjs": "~7.8.0",
+    "tailwindcss": "^3.3.3",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.0.5",
+    "@angular-eslint/builder": "^17.0.5",
+    "@angular-eslint/eslint-plugin": "^17.0.5",
+    "@angular-eslint/eslint-plugin-template": "^17.0.5",
+    "@angular-eslint/schematics": "^17.0.5",
+    "@angular-eslint/template-parser": "^17.0.5",
+    "@angular/cli": "^17.0.5",
+    "@angular/compiler-cli": "^17.0.5",
+    "@cypress/schematic": "^2.5.0",
+    "@types/jasmine": "~4.3.0",
+    "@types/jest": "^29.5.4",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
+    "cypress": "latest",
+    "eslint": "^8.47.0",
+    "jasmine-core": "~4.6.0",
+    "jest": "^29.6.4",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "~5.2.2"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "collectCoverage": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/setup-jest.ts"
+    ],
+    "globalSetup": "jest-preset-angular/global-setup"
+  }
+}
