@@ -1,0 +1,17 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    h1 {
+        font-size: 100px;
+        color: var(--color-primary);
+        margin: 0;
+    }
+    p {
+        font-size: 30px;
+        color: var(--color-secondary);
+        margin: 0;
+    }
+}
+
+
