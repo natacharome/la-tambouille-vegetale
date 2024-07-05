@@ -7,9 +7,6 @@ import { Client } from '@notionhq/client';
 import './App.css';
 
 
-const notion = new Client({ auth: "secret_XqG4t1b5fNGlUSrlEMIDjNDvpFBxw9SHkaODDEjdS0F" });
-const databaseId = "9533a1fdac2245bea5f6d056f0d0fc8d";
-
 const App: React.FC = () => {
   // TEMP DATA
   const recipes = [
