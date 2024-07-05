@@ -3,9 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Card from './components/Card';
 import Header from './components/Header';
 import RecipePage from './pages/Recipe';
-import { Client } from '@notionhq/client';
 import './App.css';
-
 
 const App: React.FC = () => {
   // TEMP DATA
