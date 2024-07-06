@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const Card: React.FC<CardProps> = ({ img, title, data }) => {
+const Card: React.FC<CardProps> = ({ img, id, title, data }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/recipe/${title}`, { state: { title, data } });
+        navigate(`/recipe/${id}`, { state: { title, data } });
     };
 
     return (
