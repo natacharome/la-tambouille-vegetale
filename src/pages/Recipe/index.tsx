@@ -15,7 +15,7 @@ const RecipePage: React.FC = () => {
           <h2>{data?.Name}</h2>
         </div>
         <div className="image-container">
-          <img src={data.Images[0].url} />
+          <img alt="image-recipe" src={data.Images[0].url} />
         </div>
       </div>
     </div>
