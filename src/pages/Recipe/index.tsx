@@ -1,13 +1,10 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
 import { useLocation } from "react-router-dom";
-import remarkGfm from "remark-gfm";
 
 const RecipePage: React.FC = () => {
   const location = useLocation();
   const { data } = location.state;
 
-  const texteFormate = data?.Test.replace(/\\/g, "").replace(/- /g, "- ");
   return (
     <div className="recipe-container">
       <div className="title-container">
@@ -20,11 +17,6 @@ const RecipePage: React.FC = () => {
         <div className="image-container">
           <img src={data.Images[0].url} />
         </div>
-      </div>
-      <div className="recipe-data">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {texteFormate}
-        </ReactMarkdown>
       </div>
     </div>
   );
