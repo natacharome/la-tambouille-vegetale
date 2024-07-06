@@ -11,9 +11,9 @@ const Card: React.FC<CardProps> = ({ id, data }) => {
   const imageUrl = data?.Images ? data?.Images[0].url : false;
   return (
     <>
-      <div className=" rounded-md m-4" onClick={handleClick}>
-        <img src={imageUrl} alt="Card" className="object-cover object-cover w-80 h-80 rounded-md" />
-      </div>
+      <a className="cursor-pointer rounded-md m-4" onClick={handleClick}>
+        <img src={imageUrl} alt="Card" className="max-w-xs transition duration-500 ease-in-out hover:scale-105 object-cover w-80 h-80 rounded-md" />
+      </a>
     </>
   );
 };

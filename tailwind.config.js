@@ -8,7 +8,7 @@ module.exports = {
         'primary': '#395246',
       },
       screens: {
-        'lg': '1400px',
+        'lg': '1300px',
         'md': '900px',
       }
     },
