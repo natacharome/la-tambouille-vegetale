@@ -12,6 +12,9 @@ const notion = new Client({
     
         return {
           statusCode: 200,
+          headers: {
+            'Access-Control-Allow-Origin': '*', // Autorise tous les domaines à accéder à cette fonction
+        },
           body: JSON.stringify(response),
         };
       } catch (error: any) {
