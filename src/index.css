@@ -1,11 +1,7 @@
-:root {
-  --color-primary: #395246;
-  --color-secondary: #395246ac;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  margin:0;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  @apply font-base text-primary;
 }

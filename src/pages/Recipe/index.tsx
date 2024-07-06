@@ -1,28 +1,32 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import { useLocation } from "react-router-dom";
+import remarkGfm from "remark-gfm";
 
 const RecipePage: React.FC = () => {
   const location = useLocation();
-  const { id, data } = location.state;
-  console.log(data.properties.Description);
-  const hasDescription = data.properties.Description.rich_text?.length > 0;
-  console.log(hasDescription);
+  const { data } = location.state;
+
+  const texteFormate = data?.Test.replace(/\\/g, "").replace(/- /g, "- ");
   return (
-    <>
-      <button onClick={() => window.history.back()}>GO BACK</button>
-      <div>
-        <h2>{id}</h2>
-        {hasDescription ? (
-            <div>
-                <p>{data.properties.Description.rich_text[0].text.content}</p>
-                <p>{data.properties.Description.rich_text[1].text.content}</p>
-            </div>
-        
-        ) : (
-           <p>Au revoir</p>
-        )}
+    <div className="recipe-container">
+      <div className="title-container">
+        <div className="title">
+          <div>
+            <button onClick={() => window.history.back()}>GO BACK</button>
+          </div>
+          <h2>{data?.Name}</h2>
+        </div>
+        <div className="image-container">
+          <img src={data.Images[0].url} />
+        </div>
       </div>
-    </>
+      <div className="recipe-data">
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {texteFormate}
+        </ReactMarkdown>
+      </div>
+    </div>
   );
 };
 
