@@ -1,7 +1,6 @@
 import type { Handler } from "@netlify/functions";
 
 const { Client } = require('@notionhq/client');
-
 const notion = new Client({
     auth: Netlify.env.get("NOTION_KEY"),
   });
