@@ -1,5 +1,4 @@
 import React from "react";
-import "./Card.css";
 import { CardProps } from "./card.interface";
 import { useNavigate } from "react-router-dom";
 
@@ -9,16 +8,11 @@ const Card: React.FC<CardProps> = ({ id, data }) => {
   const handleClick = () => {
     navigate(`/recipe/${id}`, { state: { id, data } });
   };
-  const imageUrl = data.properties.Images.files[0]?.file?.url;
-
+  const imageUrl = data?.Images ? data?.Images[0].url : false;
   return (
     <>
-      <div className="card" onClick={handleClick}>
-        {imageUrl ? (
-          <img src={imageUrl} alt="Card" className="card-img" />
-        ) : (
-          <img alt="Card" className="card-img" />
-        )}
+      <div className=" rounded-md m-4" onClick={handleClick}>
+        <img src={imageUrl} alt="Card" className="object-cover object-cover w-80 h-80 rounded-md" />
       </div>
     </>
   );

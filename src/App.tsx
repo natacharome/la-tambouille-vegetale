@@ -10,11 +10,13 @@ const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<Recipes />} />
-            <Route path="/recipe/:id" element={<RecipePage />} />
-          </Routes>
+        <div className="flex justify-center items-center">
+          <main className="w-10/12 pt-16">
+            <Routes>
+              <Route path="/" element={<Recipes />} />
+              <Route path="/recipe/:id" element={<RecipePage />} />
+            </Routes>
+          </main>
         </div>
       </Router>
     </QueryClientProvider>

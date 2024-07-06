@@ -4,13 +4,21 @@ const QUERY_KEY = ['recipes'];
 
 const fetchRecipes = async (): Promise<any[]> => {
     try {
-        const response = await fetch(`https://la-tambouille-vegetale.netlify.app/.netlify/functions/notion`);
+        console.log(process.env);
+        const config = {
+            base: process.env.REACT_APP_AIRTABLE_BASE,
+            table: process.env.REACT_APP_AIRTABLE_TABLE,
+            apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
+            baseUrl: process.env.REACT_APP_BASE_URL
+        };
+        const response = await fetch(`${config.baseUrl}${config.base}/${config.table}`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${config.apiKey}`
+            }
+        });
         const data = await response.json();
-        console.log(data.results.filter((x: any) => x.properties.Name.title.length > 0), "data");
-        return data.results.filter((recipe: any) => recipe.properties.Name.title.length > 0).map((recipe: any) => ({
-            id: recipe.id,
-            properties: recipe.properties
-        }));
+        return data.records;
     } catch (error) {
         console.error("Error fetching recipes:", error);
         return [];
