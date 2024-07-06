@@ -2,12 +2,12 @@ import type { Handler } from "@netlify/functions";
 
 const { Client } = require('@notionhq/client');
 const notion = new Client({
-    auth: Netlify.env.get("NOTION_KEY"),
+    auth: process.env.NOTION_KEY,
   });
   export const handler: Handler = async () => {
     try {
         const response = await notion.databases.query({
-          database_id: Netlify.env.get("DATABASE_ID"),
+          database_id: process.env.DATABASE_ID,
         });
     
         return {
