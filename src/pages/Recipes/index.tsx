@@ -24,7 +24,7 @@ const Recipes: React.FC = () => {
   }, [data]);
   console.log(recipes);
 
-  const tags = ["test1", "test2", "test3"]; // Example tags
+  const tags = ["test1", "test2", "test3"]; // Example tags -> Ajouter tofu / Sans gluten / 
 
   const handleTagClick = (tag: string) => {
     setSelectedTag(tag);
@@ -42,18 +42,18 @@ const Recipes: React.FC = () => {
         <button
           onClick={() => handleTagClick("All")}
           type="button"
-          className={`text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 ${
+          className={`text-white bg-emerald-800 hover:bg-emerald-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-primary dark:hover:bg-emerald-800 focus:outline-none dark:focus:ring-yellow-400 ${
             selectedTag === "All" ? "bg-blue-800" : ""
           }`}
         >
-          All
+          Tout voir
         </button>
         {tags.map((tag) => (
           <button
             key={tag}
             onClick={() => handleTagClick(tag)}
             type="button"
-            className={`text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900 ${
+            className={`text-primary border-2	 focus:outline-none border-cyan-950 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${
               selectedTag === tag ? "bg-yellow-500" : ""
             }`}
           >
