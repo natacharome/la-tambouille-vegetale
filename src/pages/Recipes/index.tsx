@@ -4,7 +4,7 @@ import Card from '../../components/Card';
 
 const Recipes: React.FC = () => {
 const { data, isLoading } = useGetRecipes();
-console.log(data && data[0].properties.Recettes.title[0].text.content);
+console.log(data);
 if(isLoading){
 return (
     <div>Loading....</div>

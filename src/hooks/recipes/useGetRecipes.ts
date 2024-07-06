@@ -9,7 +9,7 @@ const fetchRecipes = async (): Promise<any[]> => {
         console.log(data.results);
         return data.results;
     } catch (error) {
-        console.error("Error fetching gift cards:", error);
+        console.error("Error fetching recipes:", error);
         return [];
     }
 };
