@@ -1,11 +1,11 @@
 import React from 'react';
 import { useGetRecipes } from '../../hooks/recipes/useGetRecipes';
 import Card from '../../components/Card';
+import Header from '../../components/Header';
 
 const Recipes: React.FC = () => {
 const { data, isLoading } = useGetRecipes();
 console.log(data);
-console.log(data && data[0])
 
 if(isLoading){
 return (
@@ -13,11 +13,15 @@ return (
 )
 }
 return (
+<>
+<Header />
 <div className="cards">
     {data?.map((recipe, index) => (
-        <Card id={recipe.id} key={index} img={recipe.img} title={recipe.properties.Recettes.title[0].text.content} data={recipe.id} />
+        <Card id={recipe.id} key={index} data={recipe} />
     ))}              
 </div>
+</>
+
 )
 };
 

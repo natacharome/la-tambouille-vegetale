@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
 import RecipePage from "./pages/Recipe";
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -12,7 +11,6 @@ const App: React.FC = () => {
     <QueryClientProvider client={queryClient}>
       <Router>
         <div className="App">
-          <Header />
           <Routes>
             <Route path="/" element={<Recipes />} />
             <Route path="/recipe/:id" element={<RecipePage />} />
