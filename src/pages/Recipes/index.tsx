@@ -24,14 +24,19 @@ const Recipes: React.FC = () => {
   }, [data]);
   console.log(recipes);
 
-  const tags = ["test1", "test2", "test3"]; // Example tags -> Ajouter tofu / Sans gluten / 
+  const tags = ["test1", "test2", "test3"]; // Example tags -> Ajouter tofu / Sans gluten /
 
   const handleTagClick = (tag: string) => {
     setSelectedTag(tag);
     if (tag === "All") {
       setRecipes(data || []);
     } else {
-      setRecipes(data?.filter((recipe: Recipe) => recipe.fields.Labels && recipe.fields.Labels.includes(tag)) || []);
+      setRecipes(
+        data?.filter(
+          (recipe: Recipe) =>
+            recipe.fields.Labels && recipe.fields.Labels.includes(tag)
+        ) || []
+      );
     }
   };
 
@@ -61,7 +66,6 @@ const Recipes: React.FC = () => {
           </button>
         ))}
       </div>
-
       <div className="flex flex-wrap mt-16 justify-center">
         {isLoading ? (
           <div role="status" className="mt-20">
@@ -84,7 +88,9 @@ const Recipes: React.FC = () => {
             <span className="sr-only">Loading...</span>
           </div>
         ) : recipes.length === 0 ? (
-          <p className="text-center text-gray-500 mt-10">Pas de résultat pour cette recherche</p>
+          <p className="text-center text-gray-500 mt-10">
+            Pas de résultat pour cette recherche
+          </p>
         ) : (
           recipes.map((recipe, index) => (
             <Card id={recipe.id} key={index} data={recipe.fields} />
