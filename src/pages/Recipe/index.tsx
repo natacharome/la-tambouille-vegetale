@@ -33,7 +33,7 @@ const RecipePage: React.FC = () => {
             </svg>
           </button>
         </div>
-        <div className="max-w-[100%] md:max-w-[500px] mr-20">
+        <div className="max-w-[100%] md:max-w-[500px] mr-0 md:mr-20">
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-semibold">
             {data?.Name.toUpperCase()}
           </h2>
@@ -44,7 +44,7 @@ const RecipePage: React.FC = () => {
       <div>
         {data.Images.map((image: any) => (
           <img
-            className="rounded-3xl object-cover h-[90vh] w-[550px] mb-5"
+            className="rounded-3xl object-cover h-[90vh] w-[100%] mb-5"
             alt="recipe-images"
             src={image.url}
           />
