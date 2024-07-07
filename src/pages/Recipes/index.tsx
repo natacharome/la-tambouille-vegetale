@@ -22,20 +22,27 @@ const Recipes: React.FC = () => {
       setRecipes(data);
     }
   }, [data]);
+  console.log(data);
 
-  const tags = [
-    "test1",
-    "Sans gluten",
-    "Légumineuses",
-    "Hiver",
-    "Ete",
-    "Printemps",
-    "Automne",
-  ]; // Example tags -> Ajouter tofu / Sans gluten /
+  const extractUniqueLabels = (data: any) => {
+    let uniqueLabels = new Set();
+
+    data?.forEach((item: any) => {
+      if (item.fields && item.fields.Labels) {
+        item.fields.Labels.forEach((label: any) => {
+          uniqueLabels.add(label);
+        });
+      }
+    });
+    console.log(uniqueLabels, "uniqueLabels");
+    return Array.from(uniqueLabels);
+  };
+
+  let tags = extractUniqueLabels(data);
 
   const handleTagClick = (tag: string) => {
     setSelectedTag(tag);
-    if (tag === "All") {
+    if (tag === "Tout voir") {
       setRecipes(data || []);
     } else {
       setRecipes(
@@ -52,15 +59,15 @@ const Recipes: React.FC = () => {
       <Header />
       <div className="flex flex-wrap justify-center mt-32 space-x-4">
         <button
-          onClick={() => handleTagClick("All")}
+          onClick={() => handleTagClick("Tout voir")}
           type="button"
           className={`text-white bg-emerald-800 hover:bg-emerald-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-primary dark:hover:bg-emerald-800 focus:outline-none dark:focus:ring-yellow-400 ${
-            selectedTag === "All" ? "bg-blue-800" : ""
+            selectedTag === "Tout voir" ? "bg-blue-800" : ""
           }`}
         >
           Tout voir
         </button>
-        {tags.map((tag) => (
+        {tags.map((tag: any) => (
           <button
             key={tag}
             onClick={() => handleTagClick(tag)}
