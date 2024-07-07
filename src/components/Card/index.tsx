@@ -8,7 +8,7 @@ const Card: React.FC<CardProps> = ({ id, data }) => {
   const handleClick = () => {
     navigate(`/recipe/${id}`, { state: { id, data } });
   };
-  const imageUrl = data?.Images ? data?.Images[0].url : false;
+  const imageUrl = data?.Images[0].url;
   return (
     <>
       <div className="cursor-pointer rounded-md m-4" onClick={handleClick}>
