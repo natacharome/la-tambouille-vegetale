@@ -22,9 +22,16 @@ const Recipes: React.FC = () => {
       setRecipes(data);
     }
   }, [data]);
-  console.log(recipes);
 
-  const tags = ["test1", "test2", "test3"]; // Example tags -> Ajouter tofu / Sans gluten /
+  const tags = [
+    "test1",
+    "Sans gluten",
+    "Légumineuses",
+    "Hiver",
+    "Ete",
+    "Printemps",
+    "Automne",
+  ]; // Example tags -> Ajouter tofu / Sans gluten /
 
   const handleTagClick = (tag: string) => {
     setSelectedTag(tag);
@@ -43,7 +50,7 @@ const Recipes: React.FC = () => {
   return (
     <>
       <Header />
-      <div className="flex justify-center mt-20 space-x-4">
+      <div className="flex flex-wrap justify-center mt-32 space-x-4">
         <button
           onClick={() => handleTagClick("All")}
           type="button"
@@ -58,8 +65,8 @@ const Recipes: React.FC = () => {
             key={tag}
             onClick={() => handleTagClick(tag)}
             type="button"
-            className={`text-primary border-2	 focus:outline-none border-cyan-950 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${
-              selectedTag === tag ? "bg-yellow-500" : ""
+            className={`text-primary border-2	 focus:outline-none border-cyan-950 hover:bg-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${
+              selectedTag === tag ? "bg-yellow-300" : ""
             }`}
           >
             {tag}

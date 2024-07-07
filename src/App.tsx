@@ -11,7 +11,7 @@ const App: React.FC = () => {
     <QueryClientProvider client={queryClient}>
       <Router>
         <div className="flex justify-center items-center">
-          <main className="w-10/12 pt-16">
+          <main className="w-10/12 pt-20">
             <Routes>
               <Route path="/" element={<Recipes />} />
               <Route path="/recipe/:id" element={<RecipePage />} />
