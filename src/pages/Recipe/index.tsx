@@ -7,7 +7,7 @@ const RecipePage: React.FC = () => {
   const { data } = location.state;
 
   return (
-    <div className="flex flex-col md:flex-row md:justify-between mb-20">
+    <div className="flex flex-col lg:flex-row md:justify-between mb-20">
       <div className="flex flex-col md:mr-4 overflow-y-auto">
         <div>
           <button onClick={() => window.history.back()}>
