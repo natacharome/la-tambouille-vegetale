@@ -22,7 +22,6 @@ const Recipes: React.FC = () => {
       setRecipes(data);
     }
   }, [data]);
-  console.log(data);
 
   const extractUniqueLabels = (data: any) => {
     let uniqueLabels = new Set();
@@ -34,7 +33,6 @@ const Recipes: React.FC = () => {
         });
       }
     });
-    console.log(uniqueLabels, "uniqueLabels");
     return Array.from(uniqueLabels);
   };
 

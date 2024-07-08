@@ -33,8 +33,8 @@ const RecipePage: React.FC = () => {
             </svg>
           </button>
         </div>
-        <div className="max-w-[100%] lg:max-w-[500px] mr-0 md:mr-20">
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-semibold">
+        <div className="mr-0 md:mr-20">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-semibold">
             {data?.Name.toUpperCase()}
           </h2>
           <h3 className="mt-16 font-bold font-neutral-900 mb-5">RECETTE: </h3>
