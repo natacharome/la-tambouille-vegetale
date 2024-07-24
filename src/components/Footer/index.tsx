@@ -8,7 +8,6 @@ const Footer: React.FC<any> = () => {
         <svg
           stroke="currentColor"
           fill="currentColor"
-          stroke-width="0"
           viewBox="0 0 1024 1024"
           className="animate-pulse"
           color="red"

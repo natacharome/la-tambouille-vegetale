@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import Recipes from "./pages/Recipes";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
+import NotFoundPage from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<Recipes />} />
               <Route path="/recipe/:id" element={<RecipePage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>
         </div>
