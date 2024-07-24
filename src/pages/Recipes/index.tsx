@@ -8,7 +8,7 @@ type Recipe = {
   fields: {
     Name: string;
     Labels: string[];
-    [key: string]: any; // Pour tous les autres champs potentiels
+    [key: string]: any;
   };
 };
 
